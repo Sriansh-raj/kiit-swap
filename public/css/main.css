@@ -1,0 +1,257 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  overflow-y: hidden; /* Add this line */
+
+}
+
+
+body,
+h1,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: black;
+}
+
+   .button{
+    width: auto;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+   h1{
+    
+    margin-top: 100px;
+    font-size: 120px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+       
+   }
+
+   .title {
+    color: white;
+   }
+
+   button{
+     background-color:#51ed0d;
+     border:none;
+     padding:20px 60px;
+     margin-left:23px;
+     border-radius:10px;
+     font-size:30px;
+     font-family: math;
+   }
+   button:hover{
+     box-shadow:1px 1px 1px black;
+     background-color:rgb(246, 153, 22);
+     cursor:pointer;
+   }
+   
+
+   .leaf {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.leaf div {
+    position: absolute;
+    display: block;
+}
+
+.leaf div:nth-child(1) {
+    left: 20%;
+    animation: fall 15s linear infinite;
+    animation-delay: -2s;
+
+}
+
+.leaf div:nth-child(2) {
+    left: 70%;
+    animation: fall 15s linear infinite;
+    animation-delay: -4s;
+}
+
+.leaf div:nth-child(3) {
+    left: 10%;
+    animation: fall 20s linear infinite;
+    animation-delay: -7s;
+
+}
+
+.leaf div:nth-child(4) {
+    left: 50%;
+    animation: fall 18s linear infinite;
+    animation-delay: -5s;
+}
+
+.leaf div:nth-child(5) {
+    left: 85%;
+    animation: fall 14s linear infinite;
+    animation-delay: -5s;
+}
+
+.leaf div:nth-child(6) {
+    left: 15%;
+    animation: fall 16s linear infinite;
+    animation-delay: -10s;
+}
+
+.leaf div:nth-child(7) {
+    left: 90%;
+    animation: fall 15s linear infinite;
+    animation-delay: -4s;
+}
+
+@keyframes fall {
+    0% {
+        opacity: 1;
+        top: -10%;
+        transform: translateX (20px) rotate(0deg);
+    }
+
+    20% {
+        opacity: 0.8;
+        transform: translateX (-20px) rotate(45deg);
+    }
+
+    40% {
+
+        transform: translateX (-20px) rotate(90deg);
+    }
+
+    60% {
+
+        transform: translateX (-20px) rotate(135deg);
+    }
+
+    80% {
+
+        transform: translateX (-20px) rotate(180deg);
+    }
+
+    100% {
+
+        top: 110%;
+        transform: translateX (-20px) rotate(225deg);
+    }
+}
+
+.leaf1 {
+    transform: rotateX(180deg);
+}
+
+@media(max-width:790px){
+  button {
+    background-color: #51ed0d;
+    border: none;
+    padding: 10px 36px;
+    margin-left: 15px;
+    border-radius: 10px;
+    position: relative;
+    font-size: 20px;
+    font-family: math;
+    left: -34px;
+}
+}
+
+@media(max-width:650px){
+  h1 {
+    margin-top: 100px;
+    font-size: 57px;
+    position: relative;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 28px;
+}
+
+}
+
+@media (max-width:540px) {
+  .button{
+    position: absolute;
+    left: 0rem;
+  }
+}
+
+@media (max-width:414px){
+
+.button {
+  position: absolute;
+  left: 7rem;
+}
+}
+
+@media(max-width:390px){
+  button {
+    background-color: #51ed0d;
+    border: none;
+    padding: 10px 36px;
+    margin-left: 15px;
+    border-radius: 10px;
+    position: relative;
+    font-size: 20px;
+    font-family: math;
+    left: 23px;
+}
+
+h1 {
+  margin-top: 100px;
+  font-size: 44px;
+  position: relative;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0px;
+}
+}
+
+@media (max-width: 281px){
+  button {
+    background-color: #51ed0d;
+    border: none;
+    padding: 10px 36px;
+    margin-left: 15px;
+    border-radius: 10px;
+    position: relative;
+    left: -3rem;
+    font-size: 16px;
+    font-family: math;
+}
+}

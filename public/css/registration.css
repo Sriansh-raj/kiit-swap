@@ -1,0 +1,153 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://wallpapercave.com/wp/wp9764009.jpg'); /* Replace 'path/to/your/background/image.jpg' with the path to your background image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(5px); /* Apply blur effect to entire page */
+}
+
+.main {
+    background-image: url('https://www.heet.org.uk/wp-content/uploads/et_temp/gradient-background-26046-26731-hd-wallpapers.jpg-3380356_1080x675.png');
+    margin-top: 25px;
+    width: 350px;
+    height: 669px;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px rgba(0, 0, 0, 0.623);
+}
+
+input,
+button {
+    background-color: transparent; /* Make background transparent */
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+}
+
+h1 {
+    position: relative;
+    top: -18rem;
+    z-index: 1;
+    right: 0rem;
+    font-size: 37px;
+    color: whitesmoke;
+}
+
+#chk {
+    display: none;
+}
+
+.signup {
+    position: relative;
+    width: 100%;
+    height: 103%;
+}
+
+.signup label {
+    color: black;
+}
+
+.signup label:hover {
+    color: rgb(221 238 243);
+}
+
+#signup {
+    position: relative;
+    top: 19px;
+    left: 9px;
+    color: white;
+}
+
+.fill {
+    position: relative;
+    bottom: 3px;
+}
+
+label {
+    color: #fff;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+input {
+    width: 60%;
+    height: 20px;
+    background: #e0dede;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+#submit {
+    width: 24%;
+    height: 37px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #050e10;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    position: relative;
+    cursor: pointer;
+    right: 0.5rem;
+    text-decoration: none;
+}
+
+#submit:hover {
+    background: #5c5b5f;
+    text-decoration: none;
+}
+
+#Login {
+    width: 24%;
+    height: 37px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #050e10;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+    position: relative;
+    bottom: 57px;
+    left: 75px;
+
+}
+
+#Login:hover {
+    background: #5c5b5f;
+
+}
+
+#loginamca {
+    text-decoration: none;
+}

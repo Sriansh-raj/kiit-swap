@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link type="text/css" rel="stylesheet" href="/css/dashbord.css" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Courgette|Open+Sans&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="/Images/kiitswaplogo.png" type="image/x-icon" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>KIIT Swap</title>
+
+</head>
+
+<body>
+  <script>
+    function redirectToMain(event) {
+      if (confirm("Are you sure you want to go to the main page?")) {
+        window.location.href = "/main";
+      } else {
+        event.preventDefault(); // Prevent default link behavior (redirection)
+      }
+    }
+  </script>
+
+  <header class="header">
+    <div class="logo">
+      <img src="/Images/kiitswaplogo.png" alt="KIIT Swap logo">
+    </div>
+    <i class="bx bx-menu" id="menu-icon"></i>
+    <nav class="navbar">
+      <a href="#search" class="navline" class="active">Home</a>
+      <a href="#update" class="navline">Update Choice</a>
+      <a href="#Problem" class="navline">Problem</a>
+      <a href="#Solution" class="navline">Solution</a>
+      <a href="/main" onclick="redirectToMain(event)" class="navline">Login/SignUp</a>
+    </nav>
+  </header>
+
+
+  <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+  <section class="search" id="search">
+    <div class="leaf">
+      <div> <img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="85px" width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="85px" width="85px">
+      </div>
+
+    </div>
+
+    <div class="leaf leaf1">
+      <div><img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="85px" width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="85px" width="85px">
+      </div>
+
+    </div>
+
+    <div class="leaf leaf2">
+      <div> <img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="85px" width="85px"></img></div>
+
+      <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="85px" width="85px">
+      </div>
+    </div>
+    <% if (matchingUsers.length===0) { %>
+      <p class="No-match"></p>
+      <% } else { %>
+        <div class="container1">
+          <div id="matchingUsersContainer">
+            <% matchingUsers.forEach(matchingUser=> { %>
+              <h1 class="animatedText"></h1>
+              <br /><br />
+              <div class="matching-user">
+                <h3>Name: <%= matchingUser.name %>
+                </h3>
+                <h3>Need: <%= matchingUser.need %>
+                </h3>
+                <h3>Available: <%= matchingUser.available %>
+                </h3>
+                <p>Phone Number: <%= matchingUser.number %>
+                </p>
+                <p>Email: <%= matchingUser.email %>
+                </p>
+              </div>
+              <% }) %>
+          </div>
+        </div>
+        <% } %>
+  </section>
+
+
+
+  <section class="update" id="update">
+    <div class="container">
+      <div class="login">
+        <h1>Update here</h1>
+        <form action="/update/<%= userId %>" method="post">
+          <div class="input-box">
+            <input type="text" class="need" name="need" placeholder="Need (Section number only)" />
+            <i class="fa fa-envelope"></i>
+          </div>
+
+          <div class="input-box">
+            <input type="text" class="available" name="available" placeholder="Available (Section number only)" />
+            <i class="fa fa-lock"></i>
+          </div>
+          <button type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="Problem" id="Problem">
+    <div class="leaf">
+      <div> <img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="85px" width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="85px" width="85px">
+      </div>
+
+    </div>
+
+    <div class="leaf leaf1">
+      <div><img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="85px" width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="85px" width="85px">
+      </div>
+
+    </div>
+
+    <div class="leaf leaf2">
+      <div> <img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div><img src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="85px" width="85px"></img></div>
+
+      <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="85px"
+          width="85px"></img></div>
+      <div> <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="85px" width="85px">
+      </div>
+    </div>
+    <div class="container2">
+      <div class="item">
+        The challenge of swapping sections and finding the required section
+        for students at KIIT University is exacerbated by limited availability
+        and administrative hurdles, often resulting in scheduling conflicts
+        and frustration among students
+      </div>
+    </div>
+    <div class="container2">
+      <div class="item">
+        The lack of information regarding students who need a particular
+        section and those who have it available exacerbates the challenge of
+        section swapping at KIIT University
+      </div>
+    </div>
+    <div class="container2">
+      <div class="item">
+        Spamming on Gmail not only inundates users with unwanted emails but
+        also leads to cluttered inboxes, making it difficult for users to find
+        important messages and increasing the risk of overlooking critical
+        information
+      </div>
+    </div>
+  </section>
+
+  <section class="Solution" id="Solution">
+    <div class="container2">
+      <div class="item">
+        Section swap websites offer students the flexibility to adjust their
+        schedules according to their evolving needs and preferences. This efficiency saves time and reduces
+        administrative burdens for both students and academic advisors.
+      </div>
+    </div>
+    <div class="container2">
+      <div class="item">
+        Section swap websites streamline the process of changing class
+        sections by providing a centralized platform where students can easily
+        search for available sections, submit swap requests, and track the
+        status of their requests
+      </div>
+    </div>
+    <div class="container2">
+      <div class="item">
+        It provides information on students whose section needs match the
+        availability of others, facilitating efficient section swaps and
+        enhancing the scheduling process for all parties involved
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-text">
+      <p>Copyright &copy; 2024 by KIIT | All Rights Reserved.</p>
+    </div>
+    <div class="counter">
+      <!-- hitwebcounter Code START -->
+      <!-- <a href="https://www.hitwebcounter.com" target="_blank">
+        <img
+          src="https://hitwebcounter.com/counter/counter.php?page=11785686&style=0036&nbdigits=5&type=page&initCount=0"
+          title="Counter Widget" Alt="Visit counter For Websites" border="0" /></a> -->
+    </div>
+    <button id="scrollToTopBtn">☝️</button>
+  </footer>
+  <script src="/js/dashbord.js"></script>
+  <script src="/js/No-match.js"></script>
+
+</body>
+
+</html>
