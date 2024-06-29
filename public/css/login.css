@@ -9,7 +9,7 @@ body {
     position: relative;
     min-height: 100vh;
     max-width: 100% !important;
-    background-color: #161623;
+    background-color: #1c1a1a;
     overflow: hidden;
     display: grid;
     place-items: center;
@@ -21,7 +21,7 @@ body {
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    background: #7B66FF;
+    /* background: #FEF9E7; */
     /* transform: scale(0.5) translate(-100%, -100%); */
     /* transform: translateX(4em); */
     /* transform: scale(2, 0.5); */
@@ -37,7 +37,7 @@ body {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background: #5FBDFF;
+    background: #FEF9E7;
     
     animation: move-up6 2s ease-in infinite alternate-reverse;
 }
@@ -71,10 +71,19 @@ a {
         width: 90%;
     }
 }
-
+#login{
+    font-family: 'Permanent Marker', sans-serif;
+        background: black;
+}
+#login:hover{
+    background-color: #FEF9E7;
+    color: black;
+    transition: 0.3s ease-in-out;
+}
 .login h1 {
     font-size: 1.8rem;
-    color: #fff;
+    color: #FEF9E7;
+    font-family: 'Permanent Marker', sans-serif;
     margin-bottom: 40px;
     margin-top: 0;
     text-align: center;
@@ -99,13 +108,15 @@ a {
     border: none;
     padding: 1rem 2.7rem 1rem 1rem;
     border-radius: 10px;
-    color: #fff;
+    color: black;
+    font-family: 'Permanent Marker', sans-serif;
     background-color: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .login form .input-box input::placeholder {
-    color: #fff;
+    font-family: 'Permanent Marker', sans-serif;
+    color: black;
     font-size: 0.8rem;
     transition: 0.5s ease;
 }
@@ -123,7 +134,7 @@ a {
     top: 50%;
     right: 15px;
     transform: translateY(-50%);
-    color: #fff;
+    color: black;
     font-size: 1.2rem;
 }
 
@@ -137,8 +148,9 @@ a {
 }
 
 .login form .rembar label {
-    color: #fff;
+    color: black;
     position: relative;
+    font-family: 'Permanent Marker', sans-serif;
     width: 100%;
     padding-left: 35px;
     font-size: 0.9rem;
@@ -165,7 +177,7 @@ a {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: black;
     transition: 0.5 ease;
     opacity: 0;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -180,7 +192,7 @@ a {
     border: none;
     padding: 1rem 1rem 1rem 2.7rem;
     border-radius: 10px;
-    color: #fff;
+    color: #FEF9E7;
     margin-bottom: 30px;
     background-color: #161623;
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -190,7 +202,9 @@ a {
 }
 
 .login form button:hover {
-    background-color: #111;
+    background-color: #FEF9E7;
+    transition: 0.5s ease;
+    color: rgb(248, 243, 243);
 }
 
 .login form .links {
@@ -201,7 +215,7 @@ a {
 }
 
 .login form .links a {
-    color: #fff;
+    color: #FEF9E7;
     font-weight: 100;
     font-size: 0.7rem;
 }

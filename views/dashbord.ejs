@@ -7,6 +7,8 @@
   <link type="text/css" rel="stylesheet" href="/css/dashbord.css" />
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Courgette|Open+Sans&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Permanent Marker' rel='stylesheet'>
+  <link href="https://fonts.cdnfonts.com/css/simplifica" rel="stylesheet">
   <link rel="shortcut icon" href="/Images/kiitswaplogo.png" type="image/x-icon" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <title>KIIT Swap</title>
@@ -16,7 +18,7 @@
 <body>
   <script>
     function redirectToMain(event) {
-      if (confirm("Are you sure you want to go to the main page?")) {
+      if (confirm("Are you sure you want to go to the signup page?")) {
         window.location.href = "/main";
       } else {
         event.preventDefault(); // Prevent default link behavior (redirection)
@@ -30,66 +32,21 @@
     </div>
     <i class="bx bx-menu" id="menu-icon"></i>
     <nav class="navbar">
-      <a href="#search" class="navline" class="active">Home</a>
+      <a href="#search" class="navline" class="active" style="color: rgb(92, 88, 90);">Home</a>
       <a href="#update" class="navline">Update Choice</a>
       <a href="#Problem" class="navline">Problem</a>
       <a href="#Solution" class="navline">Solution</a>
-      <a href="/main" onclick="redirectToMain(event)" class="navline">Login/SignUp</a>
+      <a href="/main" onclick="redirectToMain(event)" class="navline">Login</a>
     </nav>
   </header>
 
 
-  <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
-
   <section class="search" id="search">
-    <div class="leaf">
-      <div> <img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div><img src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="85px" width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="85px" width="85px">
-      </div>
 
-    </div>
-
-    <div class="leaf leaf1">
-      <div><img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div><img src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="85px" width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="85px" width="85px">
-      </div>
-
-    </div>
-
-    <div class="leaf leaf2">
-      <div> <img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div><img src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="85px" width="85px"></img></div>
-
-      <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="85px" width="85px">
-      </div>
-    </div>
     <% if (matchingUsers.length===0) { %>
       <p class="No-match"></p>
       <% } else { %>
-        <div class="container1">
+        <!-- <div class="container1"> -->
           <div id="matchingUsersContainer">
             <% matchingUsers.forEach(matchingUser=> { %>
               <h1 class="animatedText"></h1>
@@ -108,77 +65,35 @@
               </div>
               <% }) %>
           </div>
-        </div>
+        <!-- </div> -->
         <% } %>
   </section>
 
 
 
   <section class="update" id="update">
+    <h3 class="prob_sta">Update here</h3>
     <div class="container">
       <div class="login">
         <h1>Update here</h1>
         <form action="/update/<%= userId %>" method="post">
           <div class="input-box">
-            <input type="text" class="need" name="need" placeholder="Need (Section number only)" />
+            <input type="text" class="need" name="need" placeholder="Need (Example : 1)" />
             <i class="fa fa-envelope"></i>
           </div>
 
           <div class="input-box">
-            <input type="text" class="available" name="available" placeholder="Available (Section number only)" />
+            <input type="text" class="available" name="available" placeholder="Available (Example : 12)" />
             <i class="fa fa-lock"></i>
           </div>
-          <button type="submit">Update</button>
+          <button type="submit" class="btn-update">Update</button>
         </form>
       </div>
     </div>
   </section>
 
   <section class="Problem" id="Problem">
-    <div class="leaf">
-      <div> <img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div><img src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="85px" width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="85px" width="85px">
-      </div>
-
-    </div>
-
-    <div class="leaf leaf1">
-      <div><img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div><img src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="85px" width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="85px" width="85px">
-      </div>
-
-    </div>
-
-    <div class="leaf leaf2">
-      <div> <img src="http://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div><img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div><img src="http://www.pngmart.com/files/1/Green-Leaves-PNG-File.png" height="85px" width="85px"></img></div>
-
-      <div> <img src="http://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png" height="85px"
-          width="85px"></img></div>
-      <div> <img src="http://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png" height="85px" width="85px">
-      </div>
-    </div>
+    <h3 class="prob_sta" id="problem">Problems</h3>
     <div class="container2">
       <div class="item">
         The challenge of swapping sections and finding the required section
@@ -205,6 +120,7 @@
   </section>
 
   <section class="Solution" id="Solution">
+    <h3 class="prob_sta">Solutions</h3>
     <div class="container2">
       <div class="item">
         Section swap websites offer students the flexibility to adjust their

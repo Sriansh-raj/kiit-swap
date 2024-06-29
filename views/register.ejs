@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KIIT Swap Register and Login</title>
+    <link href='https://fonts.googleapis.com/css?family=Permanent Marker' rel='stylesheet'>
     <link type="text/css" rel="stylesheet" href="css/registration.css" />
     <link rel="shortcut icon" href="/Images/kiitswaplogo.png" type="image/x-icon" />
 
@@ -13,66 +14,82 @@
         function validateForm() {
             var needValue = document.getElementById("need").value;
             var availableValue = document.getElementById("available").value;
-            // Check if need and available are the same
             if (needValue === availableValue) {
-                alert("Need and Available cannot be the same");
+                document.querySelector('h1#title').textContent = "Need and Available cannot be the same";
                 return false;
             }
 
-            // Check if any input field is empty
             var inputs = document.getElementsByClassName("input-field");
             for (var i = 0; i < inputs.length; i++) {
                 if (inputs[i].value === "") {
-                    alert("Please fill all fields");
+                    document.querySelector('h1#title').textContent = "Please fill all fields";
                     return false;
                 }
             }
 
-            // Check if the phone number is exactly 10 digits long
             var phoneNumber = document.getElementById("number").value;
             if (phoneNumber.length !== 10) {
-                alert("10 digit phone number only !!");
+                document.querySelector('h1#title').textContent = "10 digit phone number only !!";
                 return false;
             }
 
             var email = document.getElementsByName("email")[0].value;
             if (!email.match(/@kiit.ac.in/)) {
-                alert("Email should be from kiit domain");
+                document.querySelector('h1#title').textContent = "Email should be from kiit domain";
                 return false;
             }
 
-            var email = document.getElementsByName("email")[0].value;
-            if (email.indexOf("@") === -1) {
-                alert("Email should contain '@' symbol");
-                return false;
-            }
-
-            var domain = email.substring(atIndex + 1);
-            if (!isValidDomain(domain)) {
-                alert("Email should have a valid domain name after '@'");
+            var password = document.getElementsByName("password")[0].value;
+            var cpassword = document.getElementsByName("cpassword")[0].value;
+            if (password !== cpassword) {
+                document.querySelector('h1#title').textContent = "Passwords do not match";
                 return false;
             }
 
             return true;
         }
+
+        async function submitForm(event) {
+            event.preventDefault();
+            if (!validateForm()) return;
+
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/auth/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+
+                const titleH1 = document.querySelector('h1#title');
+                if (result.success) {
+                    titleH1.textContent = "OTP sent to your email";
+                    window.location.href = `/auth/verify-otp?email=${data.email}`;
+                } else {
+                    titleH1.textContent = result.message;
+                }
+            } catch (error) {
+                console.error('Error during form submission:', error);
+                document.querySelector('h1#title').textContent = 'Error during form submission';
+            }
+        }
     </script>
 </head>
 
 <body>
-    <h1 style="color: rgb (34, 3, 3)">
+    <h1 id="title">
         <%= title %>
-    </h1>
-    <h1 style="color: rgb (65, 211, 7)">
-        <%= password %>
-    </h1>
-    <h1 style="color: rgb (255, 0, 200)">
-        <%= email %>
     </h1>
     <div class="main">
         <input type="checkbox" id="chk" aria-hidden="true" />
-        <!-- sign up -->
         <div class="signup">
-            <form class="fill" action="/register" method="post" onsubmit="return validateForm()">
+            <form class="fill" action="/auth/signup" method="post" onsubmit="submitForm(event)">
                 <label id="signup" for="chk" aria-hidden="true">Sign Up</label>
                 <input type="text" name="name" class="input-field" placeholder="User Name"
                     title="Please fill this field" />
