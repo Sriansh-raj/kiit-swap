@@ -13,6 +13,7 @@ const port = process.env.port || 8080;
 const app = express();
 
 // Connect Database
+mongoose.set('strictQuery', false);
 mongoose.connect('mongodb+srv://KIITSwap:pgZgJpO4KPFvXcq8@kiitswap.0aj0duu.mongodb.net/?retryWrites=true&w=majority&appName=KIITSwap', {useNewUrlParser:true});
 const db = mongoose.connection;
 db.on("error", ()=>{console.log("error");});
