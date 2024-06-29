@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const { body, validationResult } = require('express-validator');
 const homeSchema = require('../models/homeSchema');
 const OTP = require('../models/OTP');
@@ -104,7 +104,7 @@ router.post('/verify-otp', async (req, res) => {
 
     // OTP is valid, create the user
     const { name, number, need, available, password } = req.session.tempUser;
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new homeSchema({ name, number, email, need, available, password});
     try {
         await newUser.save();
