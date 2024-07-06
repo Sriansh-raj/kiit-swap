@@ -127,3 +127,21 @@ input {
     text-decoration: none;
     transition: 0.3s ease-in;
 }
+
+@media(max-width:709px){
+    h1{
+        font-size: 1.6rem;
+    }
+}
+
+@media(max-width:493px){
+    h1{
+        font-size: 1.3rem;
+    }
+}
+
+@media(max-width:403px){
+    h1{
+        font-size: 1.1rem;
+    }
+}
