@@ -18,12 +18,30 @@ const sendOTPEmail = async (email, otp) => {
         }
     });
 
-    const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: email,
-        subject: 'Your OTP for KIIT Swap Registration',
-        text: `Your OTP is: ${otp}`
-    };
+const mailOptions = {
+    from: `KIIT Swap <${process.env.EMAIL_USER}>`, // Display name and sender email
+    to: email, // Recipient email
+    subject: 'Your OTP for KIIT Swap Registration', // Email subject
+    html: `
+<p>Dear User,</p>
+
+<p>Your One Time Password (OTP) for KIIT Swap registration is: <strong>${otp}</strong></p>
+
+<p>This OTP is valid for only 5 minutes. Please do not share this OTP with anyone.</p>
+
+<p>Please note that the OTP is valid for only one session. If you refresh the page or leave the KIIT Swap portal, you will need to generate a new OTP.</p>
+
+<p>If you did not request this OTP, please contact us immediately at <a href="mailto:support@kiitswap.com">support@kiitswap.com</a>.</p>
+
+<p>Regards,<br>
+KIIT Swap Team<br>
+<a href="mailto:support@kiitswap.com">support@kiitswap.com</a></p>
+
+<hr>
+
+<p><em>Notice: The information contained in this e-mail message and/or attachments may contain confidential or privileged information. If you are not the intended recipient, any dissemination, use, review, distribution, printing, or copying of the information contained in this e-mail message and/or attachments is strictly prohibited. If you have received this communication in error, please notify us by reply e-mail or telephone and immediately and permanently delete the message and any attachments. Thank you.</em></p>
+`,
+};
 
     try {
         const info = await transporter.sendMail(mailOptions);
