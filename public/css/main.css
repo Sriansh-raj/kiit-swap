@@ -1,219 +1,154 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   border: none;
   outline: none;
   scroll-behavior: smooth;
-
 }
 
 html {
   font-size: 62.5%;
   overflow-x: hidden;
-  overflow-y: hidden; /* Add this line */
-
 }
-
-
-body,
-h1,
-p,
-ul {
-  margin: 0;
-  padding: 0;
-}
-
 
 body {
-  font-family: 'Permanent Marker', sans-serif;
-  background: #131313;
+  margin: 0;
+  padding: 0;
+  font-family: "Permanent Marker", sans-serif;
+  background-color: #131313;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-   .button{
-    width: auto;
-    height: 25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   }
-
-   h1{
-    
-    margin-top: 100px;
-    font-size: 120px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-       
-   }
-
-   .title {
-    color: #FEF9E7;
-   }
-
-   button{
-     background-color:#FEF9E7;
-     color: rgb(26, 24, 24);
-     font-family: 'Permanent Marker', sans-serif;
-     border:none;
-     padding:20px 60px;
-     margin-left:23px;
-     border-radius:10px;
-     font-size:30px;
-   }
-   button:hover{
-     box-shadow:1px 1px 1px black;
-     background-color:rgb(74, 73, 71);
-     cursor:pointer;
-    transition: 0.5s ease;
-   }
-   
-@media (max-width : 1326px){
 h1 {
-    /* margin-top: auto; */
-    font-size: 12rem;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-    .button {
-      width: auto;
-      height: fit-content;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      right: 5rem;
-    }
-
+  font-size: 12rem;
+  color: #fef9e7;
+  text-align: center;
 }
 
-
-  @media(max-width:976px){
-    h1 {
-        margin-top: 100px;
-        font-size: 106px;
-        height: 115px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-                                .button {
-                                  width: auto;
-                                  position: relative;
-                                  height: 34rem;
-                                  display: flex;
-                                  justify-content: center;
-                                  align-items: center;
-                                  left: 1rem;
-                                }
-  }
-
-@media(max-width:790px){
-  button {
-    background-color: #FEF9E7;
-    border: none;
-    padding: 10px 36px;
-    margin-left: 15px;
-    border-radius: 10px;
-    position: relative;
-    font-size: 20px;
-    font-family: 'Permanent Marker', sans-serif;
-    left: -34px;
-}
-}
-
-@media(max-width:714px){
-  h1 {
-      margin-top: 88px;
-      font-size: 58px;
-      height: 115px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-.button {
-  width: auto;
-  height: 25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-
-}
-
-/* @media(max-width:650px){
-  h1 {
-    margin-top: 100px;
-    font-size: 57px;
-    position: relative;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.title {
+  margin-bottom: 2rem;
 }
 
 .button {
-  height: 300px;
-  position: relative;
   display: flex;
+  gap: 2rem;
   justify-content: center;
-  align-items: center;
-  right: 28px;
 }
 
-} */
-
-@media (max-width:540px) {
-      .button {
-          position: relative;
-          left: 2rem;
-        }
+button {
+  background-color: #fef9e7;
+  color: #1a1818;
+  font-family: "Permanent Marker", sans-serif;
+  padding: 2rem 0;
+  border-radius: 1rem;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+  width: 20rem;
+  text-align: center;
 }
 
-@media (max-width:414px){
-    button {
-        background-color: #FEF9E7;
-        border: none;
-        padding: 10px 36px;
-        margin-left: 15px;
-        border-radius: 10px;
-        position: relative;
-        font-size: 18px;
-        font-family: 'Permanent Marker', sans-serif;
-        left: -4rem;
-      }
+button:hover {
+  box-shadow: 1px 1px 1px black;
+  background-color: #4a4947;
 }
 
-@media(max-width:361px){
+@media (max-width: 1326px) {
+  h1 {
+    font-size: 10rem;
+  }
+
   .button {
-      position: relative;
-      left: 5rem;
-      height: fit-content;
-      top: 41rem;
-}
-
-        h1 {
-          margin-top: 88px;
-          font-size: 38px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-}
-
-@media (max-width: 289px){
-  #login{
-    font-size: 12px;
+    gap: 1.5rem;
   }
- #signup{
-  font-size: 12px;
- }
+}
+
+@media (max-width: 976px) {
+  h1 {
+    font-size: 8.5rem;
+  }
+
+  .button {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  button {
+    padding: 1.5rem 0;
+    font-size: 2.5rem;
+    width: 18rem;
+  }
+}
+
+@media (max-width: 790px) {
+  h1 {
+    font-size: 7rem;
+  }
+
+  button {
+    padding: 1rem 0;
+    font-size: 2rem;
+    width: 16rem;
+  }
+}
+
+@media (max-width: 714px) {
+  h1 {
+    font-size: 5.8rem;
+  }
+
+  button {
+    padding: 0.8rem 0;
+    font-size: 1.8rem;
+    width: 14rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .button {
+    gap: 1rem;
+  }
+
+  button {
+    padding: 0.7rem 0;
+    font-size: 1.6rem;
+    width: 12rem;
+  }
+}
+
+@media (max-width: 412px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  button {
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    width: 10rem;
+  }
+}
+
+@media (max-width: 361px) {
+  h1 {
+    font-size: 3.8rem;
+  }
+
+  button {
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+    width: 8rem;
+  }
+}
+
+@media (max-width: 289px) {
+  button {
+    font-size: 1rem;
+    width: 6rem;
+  }
 }
