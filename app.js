@@ -14,7 +14,7 @@ const app = express();
 
 // Connect Database
 mongoose.set('strictQuery', false);
-mongoose.connect('mongodb+srv://KIITSwap:pgZgJpO4KPFvXcq8@kiitswap.0aj0duu.mongodb.net/?retryWrites=true&w=majority&appName=KIITSwap', {useNewUrlParser:true});
+mongoose.connect('mongodb+srv://UserName:password.0aj0duu.mongodb.net/?retryWrites=true&w=majority&appName=KIITSwap', {useNewUrlParser:true});
 const db = mongoose.connection;
 db.on("error", ()=>{console.log("error");});
 db.once("open", ()=>{console.log("connected");});
@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 
 // Session middleware
 app.use(session({
-    secret: 'd1f72be7cbf20ec5e5b9144f1b68ecf4df2b3e1245c454a46b9ea6f8f9e5e7671a06cfc3f76b2b587fe7d8f59e51723722759c0cf5d3f1b516372db09c8f7f3a',
+    secret: '',
     resave: false,
     saveUninitialized: true
 }));
@@ -47,8 +47,8 @@ app.listen(port, () => {
 const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: 'bestof5special@gmail.com',
-        pass: 'wfbg kfuc bbzo pxbb'
+        user: '@gmail.com',
+        pass: ''
     }
 });
 
