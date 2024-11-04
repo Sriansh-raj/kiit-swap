@@ -72,7 +72,7 @@
         <h1>OTP Code Verification</h1>
         <form id="verifyOTPForm" method="POST" action="/auth/verify-otp">
             <input type="hidden" name="email" value="<%= email %>">
-            <label for="otp">Enter the OTP code sent to your phone:</label>
+            <label for="otp">Enter the OTP code sent to your KIIT mail:</label>
             <input type="text" id="otp" name="otp" maxlength="6" minlength="6" required>
             <button type="submit">Verify OTP Code</button>
         </form>
